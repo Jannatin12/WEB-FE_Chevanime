@@ -1,5 +1,5 @@
 function http(endpoint, config) {
-  const_url = import.meta.env.VITE_JIKAN_BASE_URL + endpoint;
+  const url = import.meta.env.VITE_JIKAN_BASE_URL + endpoint;
 
   return fetch(url, config)
     .then(response => response.json())

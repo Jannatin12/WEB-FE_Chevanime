@@ -1,44 +1,44 @@
 <template>
   <div class="card card-side bg-base-100 shadow-xl">
   <figure>
-    <img src="https://api.lorem.space/image/movie?w=200&h=280" alt="Movie">
+    <img :src="anime.images.webp.image_url" :alt="anime.title">
   </figure>
   <div class="card-body">
-    <h2 class="card-title">New movie is released!</h2>
+    <h2 class="card-title">{{anime.title }}</h2>
     <table>
       <tr>
         <td>Rangking</td>
         <td></td>
-        <td>10</td>
+        <td>{{ anime.rank }}</td>
       </tr>
 
       <tr>
         <td>Episode</td>
         <td></td>
-        <td>10</td>
+        <td>{{ anime.episodes || '-'}}</td>
       </tr>
 
       <tr>
         <td>Tipe</td>
         <td></td>
-        <td>10</td>
+        <td>{{ anime.type }}</td>
       </tr>
 
       <tr>
         <td>Score</td>
         <td></td>
-        <td>10</td>
+        <td>{{ anime.score }}</td>
       </tr>
 
       <tr>
         <td>Tahun Rilis</td>
         <td></td>
-        <td>10</td>
+        <td>{{ anime.aired.from }}</td>
       </tr>
     </table>
     <div class="w-full flex flex-row">
       <span>
-        <div class="badge badge-primary">Primary</div>
+        <div class="badge badge-primary ml-1 mb-1" v-for="genre in anime.genres" :key="genre.mal_id">{{ genre.name }}</div>
       </span>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="navbar bg-orange-400 text-white shadow-lg px-52">
+    <div class="navbar bg-orange-400 text-white shadow-lg px-52 mb-4">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
