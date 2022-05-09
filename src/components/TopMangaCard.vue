@@ -1,44 +1,44 @@
 <template>
   <div class="card card-side bg-base-100 shadow-xl">
   <figure>
-    <img :src="anime.images.webp.image_url" :alt="anime.title">
+    <img :src="manga.images.webp.image_url" :alt="manga.title">
   </figure>
   <div class="card-body">
-    <h2 class="card-title">{{anime.title }}</h2>
+    <h2 class="card-title">{{manga.title }}</h2>
     <table>
       <tr>
         <td>Rangking</td>
         <td></td>
-        <td>{{ anime.rank }}</td>
+        <td>{{ manga.rank }}</td>
       </tr>
 
       <tr>
-        <td>Episode</td>
+        <td>Volume</td>
         <td></td>
-        <td>{{ anime.episodes || '-'}}</td>
+        <td>{{ manga.volumes || '-'}}</td>
       </tr>
 
       <tr>
         <td>Tipe</td>
         <td></td>
-        <td>{{ anime.type }}</td>
+        <td>{{ manga.type }}</td>
       </tr>
 
       <tr>
         <td>Score</td>
         <td></td>
-        <td>{{ anime.score }}</td>
+        <td>{{ manga.score }}</td>
       </tr>
 
       <tr>
-        <td>Tanggal Rilis Pertama</td>
+        <td>Tanggal Rilis</td>
         <td></td>
-        <td>{{ anime.aired.from }}</td>
+        <td>{{ manga.published.from }}</td>
       </tr>
     </table>
     <div class="w-full flex flex-row">
       <span>
-        <div class="badge badge-primary ml-1 mb-1" v-for="genre in anime.genres" :key="genre.mal_id">{{ genre.name }}</div>
+        <div class="badge badge-primary ml-1 mb-1" v-for="genre in manga.genres" :key="genre.mal_id">{{ genre.name }}</div>
       </span>
     </div>
   </div>
@@ -47,9 +47,9 @@
 
 <script>
 export default {
-  name: 'TopAnimeCard',
+  name: 'TopMangaCard',
   props: {
-    anime: {
+    manga: {
       type: Object,
       default: () => {
         return{}
