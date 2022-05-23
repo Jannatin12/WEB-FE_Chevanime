@@ -1,5 +1,5 @@
 <template>
-  <div class="card card-side bg-base-100 shadow-xl">
+  <div class="card md:card-side bg-base-100 shadow-xl">
   <figure>
     <img :src="anime.images.webp.image_url" :alt="anime.title">
   </figure>
