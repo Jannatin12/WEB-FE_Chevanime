@@ -39,7 +39,8 @@
         </form>
       </div>
     </div>
-
+    <!-- End Modal -->
+    
     <h1 class="text-center text-2xl my-5 font-semibold">ChevaNime Forum</h1>
     
     <div v-if="isLoading">
@@ -74,7 +75,9 @@
           <div 
             class="card rounded-md p-5 shadow-xl bg-white hover:cursor-pointer"
             v-for="forum in forums"
-            :key="forum.id">
+            :key="forum.id"
+            @click="$router.push({ path: `/forum/${forum.id}`})"
+          >
             <h1 class="text-xl font-semibold">{{ forum.data.title }}</h1>
             <h2 class="text-lg font-thin">Author: {{ forum.data.author }}</h2>
             <p class="truncate">{{ forum.data.content }}</p>
